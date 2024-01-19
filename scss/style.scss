@@ -7,7 +7,10 @@ body {
     background-color: #222;
     color: #fff;
     margin: 0;
-    font-size: 16px;
+    font-size: 10px;
+    @include breakpoint-up($md) {
+        font-size: 16px;
+    }
     font-family: "IBM Plex Sans", sans-serif;
     letter-spacing: 0.4px;
     text-align: center;
@@ -55,16 +58,24 @@ header {
         place-items: center;
     }
     &__primary {
-        font-size: 3.815rem;
+        font-size: 3.815em;
         line-height: 1.1;
     }
     &__secondary {
-        font-size: 1.25rem;
+        font-size: 1.25em;
         width: 80%;
     }
 }
 .c-top-bar {
     @include grid;
     position: absolute;
-    top: 0
+    top: 0;
+    &__logo {
+        grid-column: 1/-1;
+        width: 120px;
+        @include breakpoint-up($md) {
+            width: 200px;
+        }
+    }
+    
 }
