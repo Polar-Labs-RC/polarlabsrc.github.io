@@ -1,0 +1,70 @@
+@import "normalize";
+@import "layout";
+@import "rwd";
+
+
+body {
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+    font-family: "IBM Plex Sans", sans-serif;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+
+header {
+    padding: 48px;
+    width: 1200px;
+    display: flex;
+    position: absolute;
+    top: 0
+}
+
+.button {
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    color: #222;
+    padding: 15px 35px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #eee;
+}
+
+.l-wrapper {
+    @include grid-vp;
+    place-items: center;
+    height: 100vh;
+}
+
+.c-heading {
+    display: grid;
+    place-items: center;
+    gap: 48px;
+    grid-column: 2/-2;
+    @include breakpoint-up($md) {
+        grid-column: 4/12;
+    }
+    &__text {
+        display: grid;
+        gap: 24px;
+        letter-spacing: -0.2px;
+        place-items: center;
+    }
+    &__primary {
+        font-size: 3.815rem;
+        line-height: 1.1;
+    }
+    &__secondary {
+        font-size: 1.25rem;
+        width: 80%;
+    }
+}
+.c-top-bar {
+    @include grid;
+    position: absolute;
+    top: 0
+}

@@ -1,0 +1,10 @@
+$sm: 576px;
+$md: 768px;
+$lg: 1020px;
+$xl: 1260px;
+
+@mixin breakpoint-up($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}

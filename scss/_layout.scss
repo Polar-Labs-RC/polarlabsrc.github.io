@@ -1,0 +1,54 @@
+@use "rwd" as *;
+
+:root {
+  --space: 36px;
+}
+
+@mixin grid {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  row-gap: var(--space);
+
+  @include breakpoint-up($md) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  @include breakpoint-up($lg) {
+    grid-template-columns: repeat(12, 80px);
+    padding-left: 0;
+    padding-right: 0;
+    width: initial;
+  }
+  @include breakpoint-up($xl) {
+    grid-template-columns: repeat(12, 100px);
+  }
+}
+
+@mixin grid-vp {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: var(--space) repeat(6, 1fr) var(--space);
+  width: 100%;
+
+  @include breakpoint-up($md) {
+    grid-template-columns: var(--space) repeat(12, 1fr) var(--space);
+  }
+  @include breakpoint-up($lg) {
+    grid-template-columns: minmax(var(--space), 1fr) repeat(12, 80px) minmax(var(--space), 1fr);
+    width: initial;
+  }
+  @include breakpoint-up($xl) {
+    grid-template-columns: minmax(var(--space), 1fr) repeat(12, 100px) minmax(var(--space), 1fr);
+
+  }
+}
+
+@mixin center-grid {
+  display: grid;
+  place-items: center;
+  padding: var(--space) var(--space);
+  &__logo {
+    grid-column: 1/-1;
+  }
+}

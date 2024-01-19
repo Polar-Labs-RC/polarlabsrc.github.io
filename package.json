@@ -1,0 +1,19 @@
+{
+  "name": "plrc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style compressed scss/ -o css/ --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Polar-Labs-RC/polarlabsrc.github.io/issues"
+  },
+  "homepage": "https://github.com/Polar-Labs-RC/polarlabsrc.github.io#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
